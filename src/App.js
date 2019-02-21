@@ -1,25 +1,67 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+const Stars = (props) => {
+  const numberOfStars = 1+ Math.floor(Math.random()*9);
+
+  let stars = [];
+  for (let i=0; i<numberOfStars; i++) {
+    stars.push(<i key={i} className="fa fa-star"></i>);
+  }
+
+  return (
+    <div className="col-5">
+      {stars}
+    </div>
+  );
+};
+
+const Button = (props) => {
+  return (
+    <div className="col-2">
+      <button>=</button>
+    </div>
+  );
+};
+
+const Answer = (props) => {
+  return (
+    <div className="col-5">
+      ...
+    </div>
+  );
+};
+
+const Numbers = (props) => {
+  return (
+    <div className = "card text-center">
+      <div>
+        <span>1</span>
+        <span className="selected">2</span>
+        <span className="used">3</span>
+        <span>4</span>
+        <span>5</span>
+
+      </div>
+    </div>
+  );
+};
+
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="container">
+        <h3>Play Nine</h3>
+        <hr />
+        <div className="row">
+          <Stars />
+          <Button />
+          <Answer />
+        </div>
+        <br />
+        <Numbers />
       </div>
     );
   }
